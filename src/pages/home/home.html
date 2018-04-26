@@ -1,14 +1,31 @@
-<ion-header>
-  <ion-navbar>
+<ion-header hidden>
+  <ion-navbar color="danger">
     <ion-title>
-      Ionic Blank
+      Demo App
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+  <ion-item text-center no-lines>
+    <img class="round" src="assets/imgs/logo.jpg">
+  </ion-item>
+
+  <ion-grid style="width: 75%;">
+    <ion-row class="rowStyle">
+      <ion-input type="text" placeholder="Enter your email" [(ngModel)]="email"></ion-input>
+    </ion-row>
+    
+    <ion-row class="rowStyle">
+      <ion-input type="password" placeholder="Enter your password" [(ngModel)]="password"></ion-input>
+    </ion-row>
+
+    <ion-row>
+      <button (click)="login()" ion-button block round outline color="light" style="margin-top:20px;">Login</button>
+    </ion-row>
+  </ion-grid>
+
+
+  <button ion-button block clear color="light" (click)="gotoSignupPage()">Don't have an account?</button>
 </ion-content>

@@ -6,11 +6,27 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { SignupPage } from '../pages/signup/signup';
+import { FeedPage } from '../pages/feed/feed';
+import firebase from 'firebase';
+import 'firebase/firestore';
+
+var config = {
+  apiKey: "AIzaSyDNsGvlekmFCU6-qb6zway7wypZIR8Fym4",
+  authDomain: "feedly-a36e4.firebaseapp.com",
+  databaseURL: "https://feedly-a36e4.firebaseio.com",
+  projectId: "feedly-a36e4",
+  storageBucket: "",
+  messagingSenderId: "179123632235"
+};
+firebase.initializeApp(config);
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    SignupPage,
+    FeedPage
   ],
   imports: [
     BrowserModule,
@@ -19,7 +35,9 @@ import { HomePage } from '../pages/home/home';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    SignupPage,
+    FeedPage
   ],
   providers: [
     StatusBar,

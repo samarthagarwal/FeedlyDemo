@@ -1,0 +1,27 @@
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>Your Feed</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-row margin class="rowStyle">
+    <ion-input type="text" placeholder="Say something..." [(ngModel)]="text"></ion-input>
+    <button ion-button icon-only color="danger" clear (click)="post()">
+      <ion-icon name="send"></ion-icon>
+    </button>
+  </ion-row>
+
+  <ion-card *ngFor="let post of posts">
+    <ion-card-header>
+      {{ post.owner_name }} says
+     </ion-card-header>
+     <ion-card-content>
+       {{ post.text }}
+     </ion-card-content>
+  </ion-card>
+
+</ion-content>
