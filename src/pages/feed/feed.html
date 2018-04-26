@@ -16,12 +16,13 @@
   </ion-row>
 
   <ion-card *ngFor="let post of posts">
-    <ion-card-header>
+    <ion-item-divider color="danger">
       {{ post.owner_name }} says
-     </ion-card-header>
-     <ion-card-content>
-       {{ post.text }}
-     </ion-card-content>
+      <ion-note item-right style="color: #fff;">{{ post.created.toDate() | date:'MMMM dd, yyyy'}}</ion-note>
+    </ion-item-divider>
+    <ion-item text-wrap>
+      {{ post.text }}
+    </ion-item>
   </ion-card>
 
 </ion-content>

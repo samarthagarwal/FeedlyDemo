@@ -12,14 +12,17 @@ import firebase from 'firebase';
 import 'firebase/firestore';
 
 var config = {
-  apiKey: "",
-  authDomain: "",
-  databaseURL: "",
-  projectId: "",
+  apiKey: "AIzaSyDNsGvlekmFCU6-qb6zway7wypZIR8Fym4",
+  authDomain: "feedly-a36e4.firebaseapp.com",
+  databaseURL: "https://feedly-a36e4.firebaseio.com",
+  projectId: "feedly-a36e4",
   storageBucket: "",
-  messagingSenderId: ""
+  messagingSenderId: "179123632235"
 };
 firebase.initializeApp(config);
+firebase.firestore().settings({
+  timestampsInSnapshots: true
+});
 
 @NgModule({
   declarations: [

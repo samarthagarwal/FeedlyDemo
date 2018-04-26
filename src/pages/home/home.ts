@@ -15,9 +15,7 @@ export class HomePage {
   password: string = "";
 
   constructor(public navCtrl: NavController) {
-    firebase.firestore().settings({
-      timestampsInSnapshots: true
-    });
+
   }
 
   gotoSignupPage(){
@@ -30,7 +28,7 @@ export class HomePage {
     .get().then((doc) => {
       if(doc.exists){
         if(doc.data().password == this.password){
-          this.navCtrl.push(FeedPage, {user: doc.data()})
+          this.navCtrl.setRoot(FeedPage, {user: doc.data()})
         } else {
           alert("Password does not match");
         }

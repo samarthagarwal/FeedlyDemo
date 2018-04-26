@@ -13,9 +13,6 @@ export class FeedPage {
   posts: any[] = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    firebase.firestore().settings({
-      timestampsInSnapshots: true
-    });
 
     this.getPosts();
   }
@@ -24,8 +21,12 @@ export class FeedPage {
     this.posts = [];
     firebase.firestore().collection("posts").orderBy("created", "desc").get().then((docs)=> {
       docs.forEach((doc) => {
+        // let d = doc.data();
+        // let timestamp: firebase.firestore.Timestamp = doc.data().created;
+        // d.created = timestamp.toDate();
         this.posts.push(doc.data());
       })
+      console.log(this.posts)
     })
   }
 
