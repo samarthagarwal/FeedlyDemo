@@ -15,7 +15,7 @@ page-signup {
 
     .round {
         margin-top: 50px;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
         border-radius: 50%;
         width: 50%;
         border: 1px solid white;
@@ -26,5 +26,9 @@ page-signup {
         padding-left: 10px; 
         border-radius: 30px;
         margin-top: 10px;
+    }
+
+    h1{
+        color: white;
     }
 }
